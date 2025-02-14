@@ -1,6 +1,7 @@
 'use client'
 
 import { useResumeStore } from '@/store/useResumeStore'
+import { AuthProvider } from '@/contexts/AuthContext'
 import { useEffect } from 'react'
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -14,5 +15,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
     }
   }, [isDarkMode])
 
-  return <>{children}</>
+  return <AuthProvider>{children}</AuthProvider>
 } 

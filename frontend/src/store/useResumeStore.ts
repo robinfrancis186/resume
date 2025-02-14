@@ -1,9 +1,16 @@
 import { create } from 'zustand'
 
+interface SectionContent {
+  title?: string
+  description?: string
+  items?: string[]
+  [key: string]: unknown
+}
+
 export interface ResumeSection {
   id: string
   type: 'education' | 'experience' | 'skills' | 'projects' | 'certifications'
-  content: any
+  content: SectionContent
 }
 
 interface PersonalInfo {
@@ -24,7 +31,7 @@ interface ResumeState {
   isLoading: boolean
   setPersonalInfo: (info: PersonalInfo) => void
   addSection: (section: ResumeSection) => void
-  updateSection: (id: string, content: any) => void
+  updateSection: (id: string, content: SectionContent) => void
   removeSection: (id: string) => void
   setTemplate: (template: 'minimalist' | 'modern' | 'corporate') => void
   toggleDarkMode: () => void
