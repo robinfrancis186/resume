@@ -1,0 +1,9 @@
+[project]
+name = "resume-backend"
+version = "0.1.0"
+description = "Backend for AI Resume Builder"
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["pip>=21.0"]
+build-backend = "pip.main" 
