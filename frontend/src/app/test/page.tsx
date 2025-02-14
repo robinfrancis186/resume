@@ -1,13 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
 
 export default function TestPage() {
   const { user, signInWithGoogle, logout } = useAuth()
   const [backendStatus, setBackendStatus] = useState<string>('Not tested')
   const [geminiStatus, setGeminiStatus] = useState<string>('Not tested')
-  const [loading, setLoading] = useState(false)
 
   const testBackendConnection = async () => {
     try {
@@ -38,7 +37,7 @@ export default function TestPage() {
       })
       
       if (response.ok) {
-        const data = await response.json()
+        await response.json()
         setGeminiStatus('Connected successfully')
       } else {
         setGeminiStatus(`Error: ${response.status} ${response.statusText}`)
