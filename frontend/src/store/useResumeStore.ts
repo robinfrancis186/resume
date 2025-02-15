@@ -1,9 +1,13 @@
 import { create } from 'zustand'
 
-interface SectionContent {
+export interface SectionContent {
   title?: string
   description?: string
   items?: string[]
+  startDate?: string
+  endDate?: string
+  organization?: string
+  location?: string
   [key: string]: unknown
 }
 
